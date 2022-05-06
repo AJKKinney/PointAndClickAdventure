@@ -2,68 +2,68 @@
  A Small Point and Click Adventure Game.
 
 
-######Current Version: 
+###### Current Version: 
 0.01 Pre-Alpha
 
 
-######Expected release date: 
+###### Expected release date: 
 5/30/2022
 
 
-######Game Engine: 
+###### Game Engine: 
 Unity
 
 
-####Team Members:
-	-Austen Kinney - Design, Engineering, Writing, Audio, Art
-	-Ryan Kinney - Writing, Design
+#### Team Members:
+	- Austen Kinney - Design, Engineering, Writing, Audio, Art
+	- Ryan Kinney - Writing, Design
 
 
-##Production Plan:
+## Production Plan:
 1. Dialogue Editor Tools (Fafnir Dialogue Tools)
-	-Core System X
-	-Scriptable Object Saving X
-	-Choice Nodes
-	-Test Nodes
-	-Parameters
-	-Speakers values
-	-Speakers expressions
+	- Core System X
+	- Scriptable Object Saving X
+	- Choice Nodes
+	- Test Nodes
+	- Parameters
+	- Speakers values
+	- Speakers expressions
 2. Dialogue Management System (Fafnir Dialogue Management)
-	-UI Layout X
-	-Speaker(s) UI GFX
-	-Speaker Interactable Component X
+	- UI Layout X
+	- Speaker(s) UI GFX
+	- Speaker Interactable Component X
 3. Point and Click Movement X
 	-Navmesh Movement X
 4. Scene Management
-	-Scene Loading
-	-Loading Screen
+	- Scene Loading
+	- Loading Screen
 5. Player Character Models
-	-Male Character
-	-Female Character
+	- Male Character
+	- Female Character
 6. Player Character Basic Animations (e.g. Idle, Walk, Run)
-	-Idle
-	-Walk
-	-Run
+	- Idle
+	- Walk
+	- Run
 7. Character Selection Screen
-	-Character Selection Layout
+	- Character Selection Layout
 8. Save System
-	-Save Data
-	-Binary Formatting
-	-Save Data Manager
+	- Save Data
+	- Binary Formatting
+	- Save Data Manager
 9. Main Menu
-	-New Game
-	-Load Game
-	-Settings
-	-About
-	-Quit Game
+	- New Game
+	- Load Game
+	- Settings
+	- About
+	- Quit Game
 10. Interaction System
-	-Interactable Base Class X
-	-Player Point and Click Interaction X
-	-Highlight Interactable
+	- Interactable Base Class X
+	- Player Point and Click Interaction X
+	- Highlight Interactable
 
 
 
-Design Pillars:
+## Design Pillars:
 
 I. Consequences are big.
 	Players should feel like their actions are changing and warping the world around them.
@@ -72,15 +72,15 @@ II. Your Past Will Haunt You.
 	Every action and choice of meaning a player makes must have a consequence.
 
 
-Gameplay Flow:
+## Gameplay Flow:
 
 1. Intro
 
 	The intro is designed to ease the player into the game. It opens with a gameplay and narrative Hook to pull players into the game. 
 It follows by teaching them all the fundamental building blocks they need to complete the challenges presented throughout the game.
 
-	-Character Select
-	-Introductory Sequence
+	- Character Select
+	- Introductory Sequence
 
 2. Act One
 
