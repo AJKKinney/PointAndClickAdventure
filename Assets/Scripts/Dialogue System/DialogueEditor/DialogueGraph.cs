@@ -50,10 +50,17 @@ namespace DialogueSystem
             toolbar.Add(new Button(() => RequestDataOperation(true)) { text = "Save Data" });
             toolbar.Add(new Button(() => RequestDataOperation(false)) { text = "Load Data" });
 
-            var nodeCreateButton = new Button(() => { graphView.CreateNode("Dialogue Node"); });
+            var dialogueNodeCreateButton = new Button(() => { graphView.CreateNode("Dialogue Node"); });
+            dialogueNodeCreateButton.text = "Create Dialogue Node";
+            toolbar.Add(dialogueNodeCreateButton);
 
-            nodeCreateButton.text = "Create Node";
-            toolbar.Add(nodeCreateButton);
+            var choiceNodeCreateButton = new Button(() => { graphView.CreateNode("Choice Node", DialogueNode.NodeType.Choice); });
+            choiceNodeCreateButton.text = "Create Choice Node";
+            toolbar.Add(choiceNodeCreateButton);
+
+            var exitNodeCreateButton = new Button(() => { graphView.CreateNode("Exit Node", DialogueNode.NodeType.Exit); });
+            exitNodeCreateButton.text = "Create Exit Node";
+            toolbar.Add(exitNodeCreateButton);
 
             rootVisualElement.Add(toolbar);
         }

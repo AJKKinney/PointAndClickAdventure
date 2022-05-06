@@ -58,9 +58,20 @@ namespace DialogueSystem
         }
 
 
-        public void CreateNode(string nodeName)
+        public void CreateNode(string nodeName, DialogueNode.NodeType type = DialogueNode.NodeType.Dialogue)
         {
-            AddElement(CreateDialogueNode(nodeName));
+            if (type == DialogueNode.NodeType.Dialogue)
+            {
+                AddElement(CreateDialogueNode(nodeName));
+            }
+            else if(type == DialogueNode.NodeType.Choice)
+            {
+                AddElement(CreateChoiceNode(nodeName));
+            }
+            else if(type == DialogueNode.NodeType.Exit)
+            {
+                AddElement(GenerateExitPointNode());
+            }
         }
 
 
@@ -68,12 +79,13 @@ namespace DialogueSystem
         private DialogueNode GenerateEntryPointNode()
         {
             //Create Node
-            var node = new DialogueNode 
-            { 
+            var node = new DialogueNode
+            {
                 title = "START",
                 GUID = Guid.NewGuid().ToString(),
                 dialogueText = "ENTRYPOINT",
-                entryPoint = true
+                entryPoint = true,
+                nodeType = DialogueNode.NodeType.Entry
             };
 
             //generate output port
@@ -91,10 +103,40 @@ namespace DialogueSystem
             node.SetPosition(new Rect(100, 200, 100, 150));
             return node;
         }
-        
+
+
+        //Generates the Dialogue Exit Node
+        public DialogueNode GenerateExitPointNode()
+        {
+            //Create Node
+            var node = new DialogueNode
+            {
+                title = "EXIT",
+                GUID = Guid.NewGuid().ToString(),
+                dialogueText = "EXITPOINT",
+                nodeType = DialogueNode.NodeType.Exit
+            };
+
+            //generate input port
+            var port = GeneratePort(node, Direction.Input, Port.Capacity.Multi);
+            port.portName = "Input";
+            node.inputContainer.Add(port);
+
+            //stylize
+            node.styleSheets.Add(Resources.Load<StyleSheet>("ExitNode"));
+
+            //refresh UI
+            node.RefreshExpandedState();
+            node.RefreshPorts();
+
+            node.SetPosition(new Rect(100, 200, 100, 150));
+
+            return node;
+        }
+
 
         //creates a standard dialogue node
-        public DialogueNode CreateDialogueNode(string nodeName)
+        public DialogueNode CreateDialogueNode(string nodeName, bool newNode = true)
         {
             var dialogueNode = new DialogueNode
             {
@@ -108,12 +150,13 @@ namespace DialogueSystem
             inputPort.portName = "Input";
             dialogueNode.inputContainer.Add(inputPort);
 
-            dialogueNode.styleSheets.Add(Resources.Load<StyleSheet>("Node"));
+            dialogueNode.styleSheets.Add(Resources.Load<StyleSheet>("DialogueNode"));
 
-            //create dialogue branch button
-            var button = new Button(() => { AddBranchPort(dialogueNode);});
-            button.text = "New Branch";
-            dialogueNode.titleContainer.Add(button);
+            if (newNode == true)
+            {
+                //create ouput
+                AddBranchPort(dialogueNode, "", false);
+            }
 
             //add dialogue text
             var textField = new TextField(string.Empty); 
@@ -136,8 +179,28 @@ namespace DialogueSystem
         }
 
 
+        //creates dialogue branches with player choices
+        public DialogueNode CreateChoiceNode(string nodeName, bool newNode = true)
+        {
+            var dialogueNode = CreateDialogueNode(nodeName, newNode);
+
+            dialogueNode.styleSheets.Remove(Resources.Load<StyleSheet>("DialogueNode"));
+            dialogueNode.styleSheets.Add(Resources.Load<StyleSheet>("ChoiceNode"));
+
+            //create dialogue branch button
+            var button = new Button(() => { AddBranchPort(dialogueNode); });
+            button.text = "New Branch";
+            dialogueNode.titleContainer.Add(button);
+
+            //set type
+            dialogueNode.nodeType = DialogueNode.NodeType.Choice;
+
+            return dialogueNode;
+        }
+
+
         //Adds a new branch to a dialogue node
-        public void AddBranchPort(DialogueNode dialogueNode, string overriddenPortName = "")
+        public void AddBranchPort(DialogueNode dialogueNode, string overriddenPortName = "", bool canDelete = true)
         {
             var port = GeneratePort(dialogueNode, Direction.Output);
 
@@ -160,12 +223,15 @@ namespace DialogueSystem
             port.contentContainer.Add(new Label(" "));
             port.contentContainer.Add(textField);
 
-            //add delete button
-            var deleteButton = new Button(() => RemovePort(dialogueNode, port))
+            if (canDelete == true)
             {
-                text = "X"
-            };
-            port.contentContainer.Add(deleteButton);
+                //add delete button
+                var deleteButton = new Button(() => RemovePort(dialogueNode, port))
+                {
+                    text = "X"
+                };
+                port.contentContainer.Add(deleteButton);
+            }
 
             port.portName = branchPortName;
 

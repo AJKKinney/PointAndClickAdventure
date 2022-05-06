@@ -11,7 +11,7 @@ namespace DialogueSystem.Fafnir
     public class FafnirDialogueManager : DialogueManager
     {
 
-        public GameObject dialoguePanel;
+        public GameObject dialogueOverlay;
         public Transform dialogueContent;
         public GameObject dialogueChunkPrefab;
 
@@ -20,7 +20,7 @@ namespace DialogueSystem.Fafnir
         {
             base.StartDialogue(sequence);
 
-            dialoguePanel.SetActive(true);
+            dialogueOverlay.SetActive(true);
 
             LoadNode(sequence.dialogueNodeData[0]);
         }

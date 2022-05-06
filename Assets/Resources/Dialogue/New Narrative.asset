@@ -13,16 +13,22 @@ MonoBehaviour:
   m_Name: New Narrative
   m_EditorClassIdentifier: 
   nodeLinks:
-  - BaseNodeGuid: 56bc3722-0f62-49db-86e2-8a0bfd66d801
+  - BaseNodeGuid: 514a93c7-f8a6-4e75-9666-ec7d17ae035a
     PortName: Next
-    TargetNodeGuid: 5b013343-64e8-40f6-8f88-afce4a1a8231
-  - BaseNodeGuid: 5b013343-64e8-40f6-8f88-afce4a1a8231
-    PortName: Branch 1
-    TargetNodeGuid: 0dbe7f64-045b-4679-a885-583add6540b3
+    TargetNodeGuid: f170ca1f-07f8-48ca-a395-3dc21ea60282
+  - BaseNodeGuid: 514a93c7-f8a6-4e75-9666-ec7d17ae035a
+    PortName: Next
+    TargetNodeGuid: f170ca1f-07f8-48ca-a395-3dc21ea60282
   dialogueNodeData:
-  - guid: 5b013343-64e8-40f6-8f88-afce4a1a8231
-    dialogueText: What do you need?
-    Position: {x: 227, y: 199}
-  - guid: 0dbe7f64-045b-4679-a885-583add6540b3
-    dialogueText: Stay Safe
-    Position: {x: 688, y: 199}
+  - guid: dea22f31-2ce9-48ad-ba6e-70699832e18c
+    dialogueText: Dialogue Node
+    Position: {x: 0, y: 0}
+    nodeType: 1
+  - guid: f170ca1f-07f8-48ca-a395-3dc21ea60282
+    dialogueText: Dialogue Node
+    Position: {x: 525, y: 178}
+    nodeType: 1
+  - guid: 514a93c7-f8a6-4e75-9666-ec7d17ae035a
+    dialogueText: Choice Node
+    Position: {x: 0, y: 0}
+    nodeType: 2

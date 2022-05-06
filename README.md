@@ -23,8 +23,9 @@ Unity
 1. Dialogue Editor Tools (Fafnir Dialogue Tools)
 	- Core System X
 	- Scriptable Object Saving X
-	- Choice Nodes
+	- Choice Nodes X
 	- Test Nodes
+	- Exit Nodes X
 	- Parameters
 	- Speakers values
 	- Speakers expressions

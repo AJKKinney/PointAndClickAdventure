@@ -12,5 +12,16 @@ namespace DialogueSystem
         public string GUID;
         public string dialogueText;
         public bool entryPoint = false;
+        public NodeType nodeType = NodeType.Dialogue;
+
+
+        public enum NodeType
+        {
+            Entry,
+            Dialogue,
+            Choice,
+            Test,
+            Exit
+        }
     }
 }

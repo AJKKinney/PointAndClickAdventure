@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\tSpoken text goes here.  It wraps, It snaps, and it overflows."
+  m_text: "\tSpoken text goes here.  It wraps, it snaps, and it overflows."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ab4c9a77aa1e8324db6bd40a3b3f1f21, type: 2}
   m_sharedMaterial: {fileID: 6159949808995541219, guid: ab4c9a77aa1e8324db6bd40a3b3f1f21, type: 2}
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 42
+  m_fontSizeBase: 42
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -241,8 +241,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 42
+  m_fontSizeBase: 42
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

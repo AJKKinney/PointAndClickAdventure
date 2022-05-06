@@ -30,7 +30,7 @@ namespace DialogueSystem
                 return;
             }
 
-            var dialogueChunk = ScriptableObject.CreateInstance<DialogueSequence>();
+            var dialogueSequence = ScriptableObject.CreateInstance<DialogueSequence>();
 
             var connectedPorts = Edges.Where(x => x.input.node != null).ToArray();
 
@@ -39,7 +39,7 @@ namespace DialogueSystem
                 var outputNode = connectedPorts[i].output.node as DialogueNode;
                 var inputNode = connectedPorts[i].input.node as DialogueNode;
 
-                dialogueChunk.nodeLinks.Add(new NodeLinkData
+                dialogueSequence.nodeLinks.Add(new NodeLinkData
                 {
                     BaseNodeGuid = outputNode.GUID,
                     PortName = connectedPorts[i].output.portName,
@@ -50,12 +50,13 @@ namespace DialogueSystem
             //save the nodes
             foreach(var dialogueNode in Nodes.Where(node => node.entryPoint == false))
             {
-                dialogueChunk.dialogueNodeData.Add(new DialogueNodeData
+                dialogueSequence.dialogueNodeData.Add(new DialogueNodeData
                 {
                     guid = dialogueNode.GUID,
                     dialogueText = dialogueNode.dialogueText,
-                    Position = dialogueNode.GetPosition().position
-                });
+                    Position = dialogueNode.GetPosition().position,
+                    nodeType = dialogueNode.nodeType
+                });;
             }
 
             //Creates a folder for dialogue data if one doesn't exist
@@ -68,7 +69,7 @@ namespace DialogueSystem
                 AssetDatabase.CreateFolder("Assets/Resources", "Dialogue");
             }
 
-            AssetDatabase.CreateAsset(dialogueChunk, $"Assets/Resources/Dialogue/{fileName}.asset");
+            AssetDatabase.CreateAsset(dialogueSequence, $"Assets/Resources/Dialogue/{fileName}.asset");
             AssetDatabase.SaveAssets();
         }
 
@@ -127,12 +128,32 @@ namespace DialogueSystem
         {
             foreach(var nodeData in sequence.dialogueNodeData)
             {
-                var tempNode = targetGraphView.CreateDialogueNode(nodeData.dialogueText);
+                DialogueNode tempNode;
+
+                if (nodeData.nodeType == DialogueNode.NodeType.Dialogue)
+                {
+                   tempNode = targetGraphView.CreateDialogueNode(nodeData.dialogueText, false);
+                }
+                else if(nodeData.nodeType == DialogueNode.NodeType.Choice)
+                {
+                    tempNode = targetGraphView.CreateChoiceNode(nodeData.dialogueText, false);
+                }
+                else
+                {
+                    tempNode = targetGraphView.GenerateExitPointNode();
+                }
+
                 tempNode.GUID = nodeData.guid;
                 targetGraphView.AddElement(tempNode);
 
                 var nodePorts = sequence.nodeLinks.Where(x => x.BaseNodeGuid == nodeData.guid).ToList();
-                nodePorts.ForEach(x => targetGraphView.AddBranchPort(tempNode, x.PortName));
+                //nodePorts.ForEach(x => targetGraphView.AddBranchPort(tempNode, x.PortName)); Reimplemented
+
+                for(int i = 0; i < nodePorts.Count; i++)
+                {
+
+                    targetGraphView.AddBranchPort(tempNode, nodePorts[i].PortName, i != 0);
+                }
             }
         }
 
