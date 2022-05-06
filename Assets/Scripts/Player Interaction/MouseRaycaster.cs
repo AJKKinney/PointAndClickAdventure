@@ -41,5 +41,11 @@ public class MouseRaycaster : MonoBehaviour
 
         //check for ground
         Physics.Raycast(ray, out hit, raycastDistance);
+
+        //block with UI
+        if (EventSystem.current.IsPointerOverGameObject() == true)
+        {
+            hit = new RaycastHit();
+        }
     }
 }

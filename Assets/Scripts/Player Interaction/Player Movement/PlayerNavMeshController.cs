@@ -17,7 +17,6 @@ public class PlayerNavMeshController : MonoBehaviour
     private LayerMask groundLayer;
     private MouseRaycaster mouseRaycaster;
 
-
     void Start()
     {
         //initialize
@@ -34,7 +33,7 @@ public class PlayerNavMeshController : MonoBehaviour
 
     void Update()
     {
-        
+        //set destination
         if(controls.PlayerActions.Select.WasPressedThisFrame())
         {
             RaycastHit hit = mouseRaycaster.RaycastFromMouse();
@@ -48,6 +47,7 @@ public class PlayerNavMeshController : MonoBehaviour
             }
         }
     }
+
 
 
     //moves the destination to the input position

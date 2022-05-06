@@ -3,7 +3,7 @@
 
 
 ###### Current Version: 
-0.01 Pre-Alpha
+0.02 Pre-Alpha
 
 
 ###### Expected release date: 
@@ -12,7 +12,7 @@
 
 ###### Game Engine: 
 Unity
-
+ 
 
 #### Team Members:
 - Austen Kinney: Design, Engineering, Writing, Audio, Art
@@ -21,56 +21,138 @@ Unity
 
 ## Production Plan:
 1. Dialogue Editor Tools (Fafnir Dialogue Tools)
-	- Core System X
-	- Scriptable Object Saving X
-	- Choice Nodes X
+	- Core System
+		- Graph View X
+		- Sequence Search
+		- Node Search
+	- Scriptable Object Saving
+		- Dialogue Sequence Scriptable Objects X
+		- Node Relationships X
+		- Save Data X
+		- Load Data X
+		- Drag and Drop Loading
+	- Choice Nodes
+		- Options X
+		- Prerequisites
+		- Stylize X
 	- Test Nodes
+		- Creation Controls
+		- Parameters
+		- Stylize
 	- Exit Nodes X
+		- Creation Controls X
+		- Stylize X
 	- Parameters
-	- Speakers values
-	- Speakers expressions
+		- Parameter Creation Menu
+		- Parameter Search
+	- Speakers
+		- Speaker Information
+		- Speaker Expressions
 2. Dialogue Management System (Fafnir Dialogue Management)
-	- UI Layout X
-	- Speaker(s) UI GFX
-	- Speaker Interactable Component X
-3. Point and Click Movement X
+	- UI
+		- Basic Dialogue Box Layout X
+		- Speaker UI Layout
+		- Speaker UI Expressions System
+		- Dialogue UI GFX
+		- Speaker UI GFX
+	- Dialogue Node Handling
+		- Basic Dialogue Read X
+		- Dialogue Print Out
+		- Dialogue Wait for Input
+	- Choice Node Handling
+		- Basic Choice Display
+		- Selection Wheel
+		- Prerequisites
+	- Test Node Handling
+		- Trait Testing
+	- Exit Node Handling
+		- Basic Exit X
+3. Point and Click Controls X
 	- Navmesh Movement X
+		- Controller X
+	- Walking
+		- Controls X
+		- Basic Animation
+		- Movespeed Controlled Animation
+	- Running
+		- Controls X
+		- Basic Animation
+		- Movespeed Controlled Animation
+	- Interaction System
+		- Controls X
+		- Interactable Base Class X
+		- Highlight Interactable
+		- Speaker Interactable X
 4. Scene Management
-	- Scene Loading
+	- Scene Management System
+		- Scene Loading
 	- Loading Screen
+		- Loading Bar Display
+		- Prompts
+		- Animated Icon
 5. Player Character Models
 	- Male Character
+		- Model
+		- UV Unwrap
+		- Texture
+		- Rig
+		- Idle
+		- Walk
+		- Run
 	- Female Character
-6. Player Character Basic Animations (e.g. Idle, Walk, Run)
-	- Idle
-	- Walk
-	- Run
+		- Model
+		- UV Unwrap
+		- Texture
+		- Rig
+		- Idle
+		- Walk
+		- Run
 7. Character Selection Screen
 	- Character Selection Layout
+		- Basic Selection
 8. Save System
 	- Save Data
-	- Binary Formatting
-	- Save Data Manager
+		- Critical Variables
+		- Binary Formatting
+	- Load Data
 9. Main Menu
+	- UI
+		- Layout
+		- GFX
+		- SFX
 	- New Game
+		- Load New Game
 	- Load Game
+		- Display Save Files
+		- Load Selected File
 	- Settings
+		- Music Volume
+		- SFX Volume
+		- Delete Save
 	- About
+		- Credits
+	- King and Supplanter
+		- Link to Websites
 	- Quit Game
-10. Interaction System
-	- Interactable Base Class X
-	- Player Point and Click Interaction X
-	- Highlight Interactable
-
+		- Quit Application
+10. Inventory System
+	- Item Storage
+		- Pickup
+		- Drop
+		- Use
+	- HUD
+		- Layout
+		- GFX
+		- SFX
 
 
 ## Design Pillars:
 
-###### I. Consequences are big.
+#### I. Consequences are Big.
 
 Players should feel like their actions are changing and warping the world around them.
 
-###### II. Your Past Will Haunt You.
+#### II. Your Past Will Haunt You.
 
 Every action and choice of meaning a player makes must have a consequence.
 
@@ -90,11 +172,11 @@ Section one is designed to show the player the extent of what is possible with t
 
 ##### Act Two
 
-Section two is designed to test the players skills more heavily. This is where the difficulty should be amped up and players getmore freedom to express themselves through gameplay than before.
+Section two is designed to test the players skills more heavily. This is where the difficulty should be amped up and players get more freedom to express themselves through gameplay than before.
 
 ##### Act Three
 
-Section three is where the player is given the most freedom to play and experiment with the games systems. In section three playerare given ample oppurtunity to test their skills, although the core route remains playable for the below average player.
+Section three is where the player is given the most freedom to play and experiment with the games systems. In section three players are given ample oppurtunity to test their skills, although the core route remains playable for the lowest common denominator.
 
 ##### Final Sequence
 

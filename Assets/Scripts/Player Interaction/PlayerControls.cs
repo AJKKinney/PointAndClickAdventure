@@ -62,6 +62,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleRun"",
+                    ""type"": ""Button"",
+                    ""id"": ""054f0368-4ccb-42ed-8c6c-01b977e038d2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -207,6 +216,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""MousePosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""17f1699c-f4ac-4b40-9e42-759e6ff79839"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleRun"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -219,6 +239,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_PlayerActions_AltSelect = m_PlayerActions.FindAction("AltSelect", throwIfNotFound: true);
         m_PlayerActions_CameraMovement = m_PlayerActions.FindAction("CameraMovement", throwIfNotFound: true);
         m_PlayerActions_MousePosition = m_PlayerActions.FindAction("MousePosition", throwIfNotFound: true);
+        m_PlayerActions_ToggleRun = m_PlayerActions.FindAction("ToggleRun", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -282,6 +303,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_AltSelect;
     private readonly InputAction m_PlayerActions_CameraMovement;
     private readonly InputAction m_PlayerActions_MousePosition;
+    private readonly InputAction m_PlayerActions_ToggleRun;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
@@ -290,6 +312,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @AltSelect => m_Wrapper.m_PlayerActions_AltSelect;
         public InputAction @CameraMovement => m_Wrapper.m_PlayerActions_CameraMovement;
         public InputAction @MousePosition => m_Wrapper.m_PlayerActions_MousePosition;
+        public InputAction @ToggleRun => m_Wrapper.m_PlayerActions_ToggleRun;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -311,6 +334,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @MousePosition.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnMousePosition;
                 @MousePosition.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnMousePosition;
                 @MousePosition.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnMousePosition;
+                @ToggleRun.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnToggleRun;
+                @ToggleRun.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnToggleRun;
+                @ToggleRun.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnToggleRun;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -327,6 +353,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @MousePosition.started += instance.OnMousePosition;
                 @MousePosition.performed += instance.OnMousePosition;
                 @MousePosition.canceled += instance.OnMousePosition;
+                @ToggleRun.started += instance.OnToggleRun;
+                @ToggleRun.performed += instance.OnToggleRun;
+                @ToggleRun.canceled += instance.OnToggleRun;
             }
         }
     }
@@ -337,5 +366,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnAltSelect(InputAction.CallbackContext context);
         void OnCameraMovement(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
+        void OnToggleRun(InputAction.CallbackContext context);
     }
 }

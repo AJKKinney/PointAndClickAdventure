@@ -29,13 +29,19 @@ namespace DialogueSystem
 
         public virtual void StartDialogue(DialogueSequence sequence)
         {
-            if(sequence == null)
+            if (sequence == null)
             {
                 return;
             }
 
             Debug.Log("Started Dialogue Sequence: " + sequence.name);
             currentSequence = sequence;
+        }
+
+        //Loads The node of dialogue into the dialogue system
+        public virtual void LoadNode(DialogueNodeData nodeData)
+        {
+
         }
     }
 }
