@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba8eccfb42cf3be4db7c6d623cebee50, type: 3}
+  m_Name: New Narrative
+  m_EditorClassIdentifier: 
+  nodeLinks:
+  - BaseNodeGuid: 56bc3722-0f62-49db-86e2-8a0bfd66d801
+    PortName: Next
+    TargetNodeGuid: 5b013343-64e8-40f6-8f88-afce4a1a8231
+  - BaseNodeGuid: 5b013343-64e8-40f6-8f88-afce4a1a8231
+    PortName: Branch 1
+    TargetNodeGuid: 0dbe7f64-045b-4679-a885-583add6540b3
+  dialogueNodeData:
+  - guid: 5b013343-64e8-40f6-8f88-afce4a1a8231
+    dialogueText: What do you need?
+    Position: {x: 227, y: 199}
+  - guid: 0dbe7f64-045b-4679-a885-583add6540b3
+    dialogueText: Stay Safe
+    Position: {x: 688, y: 199}
