@@ -15,8 +15,8 @@ Unity
 
 
 #### Team Members:
-	- Austen Kinney: Design, Engineering, Writing, Audio, Art
-	- Ryan Kinney: Writing, Design
+- Austen Kinney: Design, Engineering, Writing, Audio, Art
+- Ryan Kinney: Writing, Design
 
 
 ## Production Plan:
@@ -78,28 +78,23 @@ Every action and choice of meaning a player makes must have a consequence.
 
 ##### Intro
 
-	The intro is designed to ease the player into the game. It opens with a gameplay and narrative Hook to pull players into the game. 
-It follows by teaching them all the fundamental building blocks they need to complete the challenges presented throughout the game.
+The intro is designed to ease the player into the game. It opens with a gameplay and narrative Hook to pull players into the game. It follows by teaching them all the fundamental building blocks they need to complete the challenges presented throughout the game.
 
-	- Character Select
-	- Introductory Sequence
+- Character Select
+- Introductory Sequence
 
 ###### Act One
 
-	Section one is designed to show the player the extent of what is possible with the games mechanics without challenging them too 
-much. Consequences from actions in this section should not hamstring future play.
+Section one is designed to show the player the extent of what is possible with the games mechanics without challenging them too much. Consequences from actions in this section should not hamstring future play.
 
 ###### Act Two
 
-	Section two is designed to test the players skills more heavily. This is where the difficulty should be amped up and players get
-more freedom to express themselves through gameplay than before.
+Section two is designed to test the players skills more heavily. This is where the difficulty should be amped up and players getmore freedom to express themselves through gameplay than before.
 
 ##### Act Three
 
-	Section three is where the player is given the most freedom to play and experiment with the games systems. In section three player
-are given ample oppurtunity to test their skills, although the core route remains playable for the below average player.
+Section three is where the player is given the most freedom to play and experiment with the games systems. In section three playerare given ample oppurtunity to test their skills, although the core route remains playable for the below average player.
 
 ##### Final Sequence
 
-	The Final Sequence is designed to be a full test of all the skills the player has accumulated throughout play, although the gameplay 
-does not need to be overly difficult. It is where the player finally understands the full consequences of their choices.
+The Final Sequence is designed to be a full test of all the skills the player has accumulated throughout play, although the gameplay does not need to be overly difficult. It is where the player finally understands the full consequences of their choices.
