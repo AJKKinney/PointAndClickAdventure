@@ -69,7 +69,7 @@ Unity
 
 Players should feel like their actions are changing and warping the world around them.
 
-####### II. Your Past Will Haunt You.
+###### II. Your Past Will Haunt You.
 
 Every action and choice of meaning a player makes must have a consequence.
 
