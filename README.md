@@ -9,8 +9,8 @@ Game Engine: Unity
 
 
 Team Members:
-Austen Kinney - Design, Engineering, Writing, Audio, Art
-Ryan Kinney - Writing, Design
+	Austen Kinney - Design, Engineering, Writing, Audio, Art
+	Ryan Kinney - Writing, Design
 
 
 Production Plan:
