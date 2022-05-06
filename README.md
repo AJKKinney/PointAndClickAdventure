@@ -2,61 +2,64 @@
  A Small Point and Click Adventure Game.
 
 
-Current Version: 0.01 Pre-Alpha
+######Current Version: 
+0.01 Pre-Alpha
 
 
-Expected release date: 5/30/2022
+######Expected release date: 
+5/30/2022
 
 
-Game Engine: Unity
+######Game Engine: 
+Unity
 
 
-Team Members:
-	Austen Kinney - Design, Engineering, Writing, Audio, Art
-	Ryan Kinney - Writing, Design
+####Team Members:
+	-Austen Kinney - Design, Engineering, Writing, Audio, Art
+	-Ryan Kinney - Writing, Design
 
 
-Production Plan:
+##Production Plan:
 1. Dialogue Editor Tools (Fafnir Dialogue Tools)
-	A. Core System X
-	B. Scriptable Object Saving X
-	C. Choice Nodes
-	D. Test Nodes
-	E. Parameters
-	F. Speakers values
-	G. Speakers expressions
+	-Core System X
+	-Scriptable Object Saving X
+	-Choice Nodes
+	-Test Nodes
+	-Parameters
+	-Speakers values
+	-Speakers expressions
 2. Dialogue Management System (Fafnir Dialogue Management)
-	A. UI Layout X
-	B. Speaker(s) UI GFX
-	C. Speaker Interactable Component X
+	-UI Layout X
+	-Speaker(s) UI GFX
+	-Speaker Interactable Component X
 3. Point and Click Movement X
-	A. Navmesh Movement X
+	-Navmesh Movement X
 4. Scene Management
-	A. Scene Loading
-	B. Loading Screen
+	-Scene Loading
+	-Loading Screen
 5. Player Character Models
-	A. Male Character
-	B. Female Character
+	-Male Character
+	-Female Character
 6. Player Character Basic Animations (e.g. Idle, Walk, Run)
-	A. Idle
-	B. Walk
-	C. Run
+	-Idle
+	-Walk
+	-Run
 7. Character Selection Screen
-	A. Character Selection Layout
+	-Character Selection Layout
 8. Save System
-	A. Save Data
-	B. Binary Formatting
-	C. Save Data Manager
+	-Save Data
+	-Binary Formatting
+	-Save Data Manager
 9. Main Menu
-	A. New Game
-	B. Load Game
-	V. Settings
-	D. About
-	E. Quit Game
+	-New Game
+	-Load Game
+	-Settings
+	-About
+	-Quit Game
 10. Interaction System
-	A. Interactable Base Class X
-	B. Player Point and Click Interaction X
-	C. Highlight Interactable
+	-Interactable Base Class X
+	-Player Point and Click Interaction X
+	-Highlight Interactable
 
 
 
@@ -76,8 +79,8 @@ Gameplay Flow:
 	The intro is designed to ease the player into the game. It opens with a gameplay and narrative Hook to pull players into the game. 
 It follows by teaching them all the fundamental building blocks they need to complete the challenges presented throughout the game.
 
-	A. Character Select
-	B. Introductory Sequence
+	-Character Select
+	-Introductory Sequence
 
 2. Act One
 
