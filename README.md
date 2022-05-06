@@ -2,6 +2,9 @@
  A Small Point and Click Adventure Game.
 
 
+Current Version: 0.01 Pre-Alpha
+
+
 Expected release date: 5/30/2022
 
 
@@ -73,8 +76,8 @@ Gameplay Flow:
 	The intro is designed to ease the player into the game. It opens with a gameplay and narrative Hook to pull players into the game. 
 It follows by teaching them all the fundamental building blocks they need to complete the challenges presented throughout the game.
 
-	a. Character Select
-	b. Introductory Sequence
+	A. Character Select
+	B. Introductory Sequence
 
 2. Act One
 
