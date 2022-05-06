@@ -83,11 +83,11 @@ The intro is designed to ease the player into the game. It opens with a gameplay
 - Character Select
 - Introductory Sequence
 
-###### Act One
+##### Act One
 
 Section one is designed to show the player the extent of what is possible with the games mechanics without challenging them too much. Consequences from actions in this section should not hamstring future play.
 
-###### Act Two
+##### Act Two
 
 Section two is designed to test the players skills more heavily. This is where the difficulty should be amped up and players getmore freedom to express themselves through gameplay than before.
 
