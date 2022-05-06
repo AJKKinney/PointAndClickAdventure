@@ -60,7 +60,7 @@ Unity
 		- Dialogue Print Out
 		- Dialogue Wait for Input
 	- Choice Node Handling
-		- Basic Choice Display
+		- Basic Choice Display X
 		- Selection Wheel
 		- Prerequisites
 	- Test Node Handling
