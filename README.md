@@ -15,45 +15,45 @@ Team Members:
 
 Production Plan:
 1. Dialogue Editor Tools (Fafnir Dialogue Tools)
-	a. Core System X
-	b. Scriptable Object Saving X
-	c. Choice Nodes
-	e. Test Nodes
-	f. Parameters
-	g. Speakers values
-	h. Speakers expressions
+	A. Core System X
+	B. Scriptable Object Saving X
+	C. Choice Nodes
+	D. Test Nodes
+	E. Parameters
+	F. Speakers values
+	G. Speakers expressions
 2. Dialogue Management System (Fafnir Dialogue Management)
-	a. UI Layout X
-	b. Speaker(s) UI GFX
-	c. Speaker Interactable Component X
+	A. UI Layout X
+	B. Speaker(s) UI GFX
+	C. Speaker Interactable Component X
 3. Point and Click Movement X
-	a. Navmesh Movement X
+	A. Navmesh Movement X
 4. Scene Management
-	a. Scene Loading
-	b. Loading Screen
+	A. Scene Loading
+	B. Loading Screen
 5. Player Character Models
-	a. Male Character
-	b. Female Character
+	A. Male Character
+	B. Female Character
 6. Player Character Basic Animations (e.g. Idle, Walk, Run)
-	a. Idle
-	b. Walk
-	c. Run
+	A. Idle
+	B. Walk
+	C. Run
 7. Character Selection Screen
-	a. Character Selection Layout
+	A. Character Selection Layout
 8. Save System
-	a. Save Data
-	b. Binary Formatting
-	c. Save Data Manager
+	A. Save Data
+	B. Binary Formatting
+	C. Save Data Manager
 9. Main Menu
-	a. New Game
-	b. Load Game
-	c. Settings
-	d. About
-	e. Quit Game
+	A. New Game
+	B. Load Game
+	V. Settings
+	D. About
+	E. Quit Game
 10. Interaction System
-	a. Interactable Base Class X
-	b. Player Point and Click Interaction X
-	c. Highlight Interactable
+	A. Interactable Base Class X
+	B. Player Point and Click Interaction X
+	C. Highlight Interactable
 
 
 
