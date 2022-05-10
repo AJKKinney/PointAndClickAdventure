@@ -23,7 +23,7 @@ namespace DialogueSystem.Fafnir
         {
             base.StartDialogue(sequence);
 
-            UIHandler.PrepareDialogueSequence();
+            UIHandler.PrepareSequence();
 
             LoadNode(sequence.dialogueNodeData[0]);
         }
@@ -34,6 +34,7 @@ namespace DialogueSystem.Fafnir
         {
             if (nodeData.nodeType == DialogueNode.NodeType.Exit)
             {
+                UIHandler.EndSequence();
                 return;
             }
 

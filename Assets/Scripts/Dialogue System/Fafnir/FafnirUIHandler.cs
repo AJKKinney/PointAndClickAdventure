@@ -9,18 +9,34 @@ namespace DialogueSystem.Fafnir
 {
     public class FafnirUIHandler : UIHandler
     {
-        public Transform dialogueContent;
+        public RectTransform dialogueContent;
         public GameObject dialogueChunkPrefab;
         public Transform choiceWheel;
         public GameObject buttonPrefab;
+        public Scrollbar scrollBar;
+
+        private bool setHeight = false;
+
+        private void LateUpdate()
+        {
+            //set Ui Scroll
+            if(setHeight == true)
+            {
+                scrollBar.value = 0;
+                setHeight = false;
+            }
+        }
 
         public override void ReadNode(DialogueNodeData nodeData)
         {
             base.ReadNode(nodeData);
 
             //Set Dialogue
-            Transform newChunk = Instantiate(dialogueChunkPrefab, dialogueContent).transform;
+            RectTransform newChunk = Instantiate(dialogueChunkPrefab, dialogueContent).GetComponent<RectTransform>();
             newChunk.GetChild(1).GetComponent<TextMeshProUGUI>().text = nodeData.dialogueText;
+
+            //set scroll position
+            setHeight = true;
         }
 
         public override void GenerateChoice(NodeLinkData linkData)

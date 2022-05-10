@@ -19,9 +19,13 @@ namespace DialogueSystem
 
         }
 
-        public virtual void PrepareDialogueSequence()
+        public virtual void PrepareSequence()
         {
             dialogueOverlay.SetActive(true);
+        }
+        public virtual void EndSequence()
+        {
+            dialogueOverlay.SetActive(false);
         }
     }
 }

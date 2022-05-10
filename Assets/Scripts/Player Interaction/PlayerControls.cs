@@ -71,6 +71,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleInventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""0cc217e7-a6a7-4090-884f-40e0f3413160"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -227,6 +236,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""ToggleRun"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5421042f-6072-4c84-bffe-266aaaac9b98"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleInventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -240,6 +260,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_PlayerActions_CameraMovement = m_PlayerActions.FindAction("CameraMovement", throwIfNotFound: true);
         m_PlayerActions_MousePosition = m_PlayerActions.FindAction("MousePosition", throwIfNotFound: true);
         m_PlayerActions_ToggleRun = m_PlayerActions.FindAction("ToggleRun", throwIfNotFound: true);
+        m_PlayerActions_ToggleInventory = m_PlayerActions.FindAction("ToggleInventory", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -304,6 +325,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_CameraMovement;
     private readonly InputAction m_PlayerActions_MousePosition;
     private readonly InputAction m_PlayerActions_ToggleRun;
+    private readonly InputAction m_PlayerActions_ToggleInventory;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
@@ -313,6 +335,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @CameraMovement => m_Wrapper.m_PlayerActions_CameraMovement;
         public InputAction @MousePosition => m_Wrapper.m_PlayerActions_MousePosition;
         public InputAction @ToggleRun => m_Wrapper.m_PlayerActions_ToggleRun;
+        public InputAction @ToggleInventory => m_Wrapper.m_PlayerActions_ToggleInventory;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -337,6 +360,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @ToggleRun.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnToggleRun;
                 @ToggleRun.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnToggleRun;
                 @ToggleRun.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnToggleRun;
+                @ToggleInventory.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnToggleInventory;
+                @ToggleInventory.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnToggleInventory;
+                @ToggleInventory.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnToggleInventory;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -356,6 +382,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @ToggleRun.started += instance.OnToggleRun;
                 @ToggleRun.performed += instance.OnToggleRun;
                 @ToggleRun.canceled += instance.OnToggleRun;
+                @ToggleInventory.started += instance.OnToggleInventory;
+                @ToggleInventory.performed += instance.OnToggleInventory;
+                @ToggleInventory.canceled += instance.OnToggleInventory;
             }
         }
     }
@@ -367,5 +396,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnCameraMovement(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
         void OnToggleRun(InputAction.CallbackContext context);
+        void OnToggleInventory(InputAction.CallbackContext context);
     }
 }
