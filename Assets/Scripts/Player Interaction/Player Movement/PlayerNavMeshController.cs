@@ -34,7 +34,7 @@ public class PlayerNavMeshController : MonoBehaviour
     void Update()
     {
         //set destination
-        if(controls.PlayerActions.Select.WasPressedThisFrame())
+        if(controls.PlayerActions.Select.IsPressed())
         {
             RaycastHit hit = mouseRaycaster.RaycastFromMouse();
 

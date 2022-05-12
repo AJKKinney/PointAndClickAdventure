@@ -14,11 +14,6 @@ namespace DialogueSystem
 
         }
 
-        public virtual void GenerateChoice(NodeLinkData linkData)
-        {
-
-        }
-
         public virtual void PrepareSequence()
         {
             dialogueOverlay.SetActive(true);

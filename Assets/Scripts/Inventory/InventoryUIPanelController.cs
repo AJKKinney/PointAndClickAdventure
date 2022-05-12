@@ -9,7 +9,7 @@ public class InventoryUIPanelController : MonoBehaviour
     private Vector2 startPos;
     private RectTransform rect;
 
-    private readonly float scrollRange = 80f;  
+    private readonly float scrollRange = 40f;  
 
     // Start is called before the first frame update
     void Start()

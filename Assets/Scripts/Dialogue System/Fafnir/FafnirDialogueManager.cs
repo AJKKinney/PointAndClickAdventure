@@ -8,19 +8,22 @@ namespace DialogueSystem.Fafnir
 {
 
     //The Dialogue Management System Designed for Lamplight Point and Click Adventures
-    [RequireComponent(typeof(UIHandler))]
+    [RequireComponent(typeof(FafnirUIHandler))]
     public class FafnirDialogueManager : DialogueManager
     {
-        private UIHandler UIHandler;
+        private FafnirUIHandler UIHandler;
 
-        public void Start()
+        public void Awake()
         {
-            UIHandler = GetComponent<UIHandler>();
+            base.Awake();
+            UIHandler = GetComponent<FafnirUIHandler>();
         }
 
 
         public override void StartDialogue(DialogueSequence sequence)
         {
+            UIHandler.ClearChoices();
+
             base.StartDialogue(sequence);
 
             UIHandler.PrepareSequence();

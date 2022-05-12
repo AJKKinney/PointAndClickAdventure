@@ -14,7 +14,7 @@ namespace DialogueSystem
         internal DialogueSequence currentSequence;
 
 
-        private void Awake()
+        public void Awake()
         {
             //initialize
             if (instance == null)

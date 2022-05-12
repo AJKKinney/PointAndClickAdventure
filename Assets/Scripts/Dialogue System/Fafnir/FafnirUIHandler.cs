@@ -39,7 +39,7 @@ namespace DialogueSystem.Fafnir
             setHeight = true;
         }
 
-        public override void GenerateChoice(NodeLinkData linkData)
+        public void GenerateChoice(NodeLinkData linkData)
         {
             var button = Instantiate(buttonPrefab, choiceWheel);
             button.name = linkData.PortName;
@@ -51,14 +51,22 @@ namespace DialogueSystem.Fafnir
 
             button.GetComponent<Button>().onClick.AddListener(delegate
             {
-                foreach (Transform child in choiceWheel)
-                {
-                    Destroy(child.gameObject);
-                }
+                ClearChoices();
                 DialogueManager.instance.LoadNode(targetNode);
             });
 
             button.transform.GetComponentInChildren<TextMeshProUGUI>().text = linkData.PortName;
+        }
+
+        public void ClearChoices()
+        {
+            if (choiceWheel.childCount > 0)
+            {
+                foreach (Transform child in choiceWheel)
+                {
+                    Destroy(child.gameObject);
+                }
+            }
         }
     }
 }

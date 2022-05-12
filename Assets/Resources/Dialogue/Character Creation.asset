@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba8eccfb42cf3be4db7c6d623cebee50, type: 3}
+  m_Name: Character Creation
+  m_EditorClassIdentifier: 
+  nodeLinks:
+  - BaseNodeGuid: 03c915fb-6432-4759-b4bd-51dc2309e269
+    PortName: Next
+    TargetNodeGuid: 9cfcc43b-629e-405b-8060-26fb7279e416
+  - BaseNodeGuid: 9cfcc43b-629e-405b-8060-26fb7279e416
+    PortName: Male
+    TargetNodeGuid: 1cb877c6-833c-4315-9ee9-5992726a07ed
+  - BaseNodeGuid: 9cfcc43b-629e-405b-8060-26fb7279e416
+    PortName: Female
+    TargetNodeGuid: 1cb877c6-833c-4315-9ee9-5992726a07ed
+  - BaseNodeGuid: 1cb877c6-833c-4315-9ee9-5992726a07ed
+    PortName: Abusive Parent
+    TargetNodeGuid: 1322b90c-0cc6-4303-97a1-1cd576894da7
+  - BaseNodeGuid: 1cb877c6-833c-4315-9ee9-5992726a07ed
+    PortName: Child Prodigy
+    TargetNodeGuid: 1322b90c-0cc6-4303-97a1-1cd576894da7
+  - BaseNodeGuid: 1cb877c6-833c-4315-9ee9-5992726a07ed
+    PortName: Silver Spoon
+    TargetNodeGuid: 1322b90c-0cc6-4303-97a1-1cd576894da7
+  - BaseNodeGuid: 1cb877c6-833c-4315-9ee9-5992726a07ed
+    PortName: Normal... I Think
+    TargetNodeGuid: 1322b90c-0cc6-4303-97a1-1cd576894da7
+  - BaseNodeGuid: 1cb877c6-833c-4315-9ee9-5992726a07ed
+    PortName: Urchin
+    TargetNodeGuid: 1322b90c-0cc6-4303-97a1-1cd576894da7
+  - BaseNodeGuid: 1322b90c-0cc6-4303-97a1-1cd576894da7
+    PortName: Theft
+    TargetNodeGuid: f1951e73-4187-4310-8396-897f472835e2
+  - BaseNodeGuid: 1322b90c-0cc6-4303-97a1-1cd576894da7
+    PortName: Murder
+    TargetNodeGuid: f1951e73-4187-4310-8396-897f472835e2
+  - BaseNodeGuid: 1322b90c-0cc6-4303-97a1-1cd576894da7
+    PortName: Treason
+    TargetNodeGuid: f1951e73-4187-4310-8396-897f472835e2
+  - BaseNodeGuid: 1322b90c-0cc6-4303-97a1-1cd576894da7
+    PortName: Kidnapping
+    TargetNodeGuid: f1951e73-4187-4310-8396-897f472835e2
+  - BaseNodeGuid: 1322b90c-0cc6-4303-97a1-1cd576894da7
+    PortName: I'm Innocent , I Swear!
+    TargetNodeGuid: f1951e73-4187-4310-8396-897f472835e2
+  dialogueNodeData:
+  - guid: 9cfcc43b-629e-405b-8060-26fb7279e416
+    dialogueText: What is your sex?
+    Position: {x: 258, y: 193}
+    nodeType: 2
+  - guid: 1cb877c6-833c-4315-9ee9-5992726a07ed
+    dialogueText: What was your upbringing like?
+    Position: {x: 529, y: 191}
+    nodeType: 2
+  - guid: 1322b90c-0cc6-4303-97a1-1cd576894da7
+    dialogueText: What did you do to get yourself here?
+    Position: {x: 894, y: 189}
+    nodeType: 2
+  - guid: f1951e73-4187-4310-8396-897f472835e2
+    dialogueText: EXITPOINT
+    Position: {x: 1382, y: 194}
+    nodeType: 4
